@@ -17,12 +17,12 @@ class BlogsController < ApplicationController
   end
   def update
     @blog.update(blog_params)
-    flash[:notice] = 'Post successfully update'
+    flash[:success] = 'Post successfully update'
     redirect_to blogs_path
   end
   def destroy
     @blog.destroy
-    flash[:danger] = 'Post successfully destroy'
+    flash[:success] = 'Post successfully destroy'
     redirect_to blogs_path
   end
 

@@ -1,16 +1,15 @@
-<% @blog.each do |blog| %>
-<div class="container">
+  <div><%= link_to "new", new_blog_path %></div>
+  <% @blog.each do |blog| %>
+  <div class="container content ">
   <div class="row">
-    <div class="col-md-10">
+    <div class="col-ms-12">
       <p><%= blog.content%></p>
-      <br>
       <div class="row">
-        <div class="col-md-2"><%= link_to "show", blog_path(blog.id) %> </div>
-        <div class="col-md-2"><%= link_to "destroy",blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?'} %></div>
-        <div class="col-md-2"><%= link_to "edit", edit_blog_path(blog.id),data: { confirm: 'Are you sure?'} %></div>
+        <div class="col-ms-4 link"><%= link_to "show", blog_path(blog.id) %> </div>
+        <div class="col-ms-4 link"><%= link_to "destroy",blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?'} %></div>
+        <div class="col-ms-4 link"><%= link_to "edit", edit_blog_path(blog.id),data: { confirm: 'Are you sure?'} %></div>
       </div>
     </div>
   </div>
 </div>
 <% end %>
-<%= link_to "new", new_blog_path %>
