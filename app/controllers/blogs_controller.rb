@@ -5,20 +5,26 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @blog=Blog.all
     @blog=Blog.new
   end
   def create
     @blog=Blog.new(blog_params)
     @blog.save
     flash[:success] = 'Post successfully create'
-    render :new
+    redirect_to blogs_path
   end
-
+  def edit
+  end
   def update
-
+    @blog.update(blog_params)
+    flash[:notice] = 'Post successfully update'
+    redirect_to blogs_path
   end
-
+  def destroy
+    @blog.destroy
+    flash[:danger] = 'Post successfully destroy'
+    redirect_to blogs_path
+  end
 
   private
   def blog_params
