@@ -1,0 +1,7 @@
+
+<div class="">
+  <%= form_with(model: @blog,local: true) do |form| %>
+      <%= form.text_field :content %>
+      <%= form.submit "Post"%>
+    <% end %>
+</div>
