@@ -1,19 +1,20 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   def index
-    @blog=Blog.all
+    @blogs=Blog.all
   end
-
   def new
     @blog=Blog.new
   end
   def create
-    @blog=Blog.new(blog_params)
-    @blog.save
+    @blog=Blog.create(blog_params)
+    
     flash[:success] = 'Post successfully create'
     redirect_to blogs_path
   end
   def edit
+  end
+  def show
   end
   def update
     @blog.update(blog_params)
@@ -28,7 +29,7 @@ class BlogsController < ApplicationController
 
   private
   def blog_params
-    params.require(:blog).permit(:content)
+    params.require(:blog).permit(:content,:image,:image_cache)
   end
   def set_blog
     @blog=Blog.find(params[:id])
