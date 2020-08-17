@@ -9,10 +9,11 @@
   <% end %>
   <div class="field">
     <%= form_with(model:@blog,url:choose_new_or_edit,local: true) do |form| %>
-        <%= form.text_field :content %>
+        <%= form.text_field :content,:class=>"form-control",
+                                      :id=>"exampleInputEmail1" %>
         <%= form.file_field :image %>
         <%= form.hidden_field :image_cache %>
-        <div class="actions"><%= form.submit "Post"%></div>
+        <div class="actions"><%= form.submit "Post",:class=>"btn btn-primary"%></div>
     <% end %>
 </div>
 </div>
