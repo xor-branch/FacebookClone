@@ -1,10 +1,14 @@
+<div class="container">
 <h3>Confirm your post</h3>
 <%= form_with(model: @blog, url:blogs_path,local: true) do |form| %>
-
   <%= form.hidden_field :content %>
   <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
   <%= form.hidden_field :image_cache %>
   <p>Content :<%= @blog.content %> </p>
   <%= form.submit "Confirm" %>
-  <%= form.submit "Back", name: 'back'%>
 <% end %>
+<%= form_with(model:@feed, url:new_blog_path, local:true, method:"get") do |form| %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit "Return", name: "back" %>
+<% end %>
+</div>

@@ -8,7 +8,7 @@
     </ul>
   <% end %>
   <div class="field">
-    <%= form_with(model:@blog,local: true) do |form| %>
+    <%= form_with(model:@blog,url:choose_new_or_edit,local: true) do |form| %>
         <%= form.text_field :content %>
         <%= form.file_field :image %>
         <%= form.hidden_field :image_cache %>
