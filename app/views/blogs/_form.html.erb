@@ -1,7 +1,18 @@
-<div class="">
-  <%= form_with(model:@blog, local: true) do |form| %>
-      <%= form.text_field :content %>
-      <%= form.file_field :image %>
-      <%= form.submit "Post"%>
+<div class="container">
+  <% if @blog.errors.any? %>
+  <%= @blog.errors.count %> error(s)
+    <ul>
+      <% @blog.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
   <% end %>
+  <div class="field">
+    <%= form_with(model:@blog,url:choose_new_or_edit, local: true) do |form| %>
+        <%= form.text_field :content %>
+        <%= form.file_field :image %>
+        <%= form.hidden_field :image_cache %>
+        <div class="actions"><%= form.submit "Post"%></div>
+    <% end %>
+</div>
 </div>

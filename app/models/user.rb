@@ -5,5 +5,5 @@ class User < ApplicationRecord
    validates :password, presence: true, length: { minimum: 6 }
    before_validation { email.downcase! }
    has_secure_password
-
+   has_many :blogs
 end
