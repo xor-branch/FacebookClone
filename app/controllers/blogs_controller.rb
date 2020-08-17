@@ -10,15 +10,13 @@ class BlogsController < ApplicationController
   def create
     @blog=Blog.new(blog_params)
     @blog=current_user.blogs.build(blog_params)
-    if params[:back]
-        render :new
+
       if @blog.save
           flash[:success] = 'Post successfully create'
           redirect_to blogs_path
         else
           render :new
       end
-    end
   end
   def edit
   end
@@ -41,7 +39,7 @@ class BlogsController < ApplicationController
     @blog=Blog.new(blog_params)
     @blog = current_user.blogs.build(blog_params)
     render :new if @blog.invalid?
-    redirect_to blogs_path
+
   end
   private
   def blog_params
