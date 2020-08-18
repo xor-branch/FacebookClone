@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(user.id)
     else
       flash.now[:danger] = 'ooh ! something is wrong'
+      render :new
     end
   end
   def destroy
