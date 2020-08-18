@@ -1,8 +1,8 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   def index
-    @blogs=Blog.all
-    @user=User.all
+    @blogs= Blog.all
+    @user= User.all
   end
   def new
     @blog=Blog.new
