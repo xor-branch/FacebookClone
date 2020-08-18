@@ -5,10 +5,10 @@ class UsersController < ApplicationController
   end
   def create
     @user = User.new(user_params)
-    if @user.save
-      redirect_to user_path(@user.id)
-    else
+    unless @user.save
       render :new
+   else
+      redirect_to user_path(@user.id)
     end
   end
  def show

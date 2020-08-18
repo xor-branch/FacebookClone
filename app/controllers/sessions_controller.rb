@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
       flash.now[:success] = 'well done!'
       redirect_to user_path(user.id)
     else
-      flash.now[:danger] = 'ooh ! something is wrong'
-      render :new
+      redirect_to new_session_path
+      flash[:danger] = 'ooh ! something is wrong'
     end
   end
   def destroy
