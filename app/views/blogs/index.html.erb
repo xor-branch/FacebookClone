@@ -13,7 +13,6 @@
       <td><%= blog.content%></td>
     </tr>
   <tr class="pill">
-
    <% if logged_in? %>
       <% if blog.user.id == current_user.id %>
         <td class="badge badge-pill badge-dark"><%= link_to "show", blog_path(blog.id) %></td>
@@ -25,9 +24,8 @@
    <% else %>
       <td class="badge badge-pill badge-dark"><%= link_to "show", blog_path(blog.id) %></td>
    <% end %>
-  <% end %>
   </tr>
   </tbody>
 </table>
-
+<% end %>
 </div>

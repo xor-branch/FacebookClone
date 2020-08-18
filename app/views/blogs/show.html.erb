@@ -1,5 +1,12 @@
-<%=image_tag @blog.image.url%>
-<%=@blog.content %>
-<div class="">
-  <%= link_to "Home", blogs_path %>
+<div class="container">
+<table>
+  <tbody>
+    <tr>
+      <td><%=image_tag @blog.image.url%></td>
+    </tr>
+    <tr>
+      <td><%=@blog.content %></td>
+    </tr>
+  </tbody>
+</table>
 </div>
