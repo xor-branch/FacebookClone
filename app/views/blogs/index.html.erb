@@ -3,7 +3,7 @@
 <table class="table">
   <tbody>
     <tr>
-      <td><%= blog.user.name%></td>
+      <td><%= blog.user.name %></td>
     </tr>
     <tr>
       <td><%= image_tag blog.image.url,:class=>"img-fluid rounded mx-auto d-block",
@@ -22,7 +22,7 @@
         <td class="badge badge-pill badge-dark"><%= link_to "show", blog_path(blog.id) %></td>
      <% end %>
    <% else %>
-      <td class="badge badge-pill badge-dark"><%= link_to "show", blog_path(blog.id) %></td>
+       <td class="badge badge-pill badge-dark"><%= link_to "show", blog_path(blog.id) %></td>
    <% end %>
   </tr>
   </tbody>
